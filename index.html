@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allie Q's Barber Shop — Marseilles, IL Since 1989</title>
+<meta name="description" content="Allie Q's Barber Shop on Main Street, Marseilles, IL. 36+ years cutting hair in town. Honest cuts, fair prices, walk-ins welcome. (815) 795-2849.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Slab:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#ffffff;
+  --ink:#1a1a1a;
+  --paper:#f4f2ed;
+  --grey:#6b6b6b;
+  --grey-line:#d8d4cc;
+  --gold:#9e7a2c;
+  --font-display:'Anton',Impact,sans-serif;
+  --font-body:'Roboto Slab',Georgia,serif;
+}
+body{font-family:var(--font-body);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;font-weight:400}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+.nav.scrolled{background:rgba(255,255,255,.97);border-bottom-color:var(--grey-line);backdrop-filter:blur(8px)}
+.brand{font-family:var(--font-display);font-size:1.85rem;letter-spacing:.08em;color:var(--ink);text-transform:uppercase}
+.brand i{font-style:normal;color:var(--gold)}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--ink);transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.cta{background:var(--ink);color:var(--bg);padding:11px 22px;font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;transition:background .2s,transform .15s;border:none;cursor:pointer;font-family:var(--font-body)}
+.cta:hover{background:#000;transform:translateY(-1px)}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
+.menu-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:4px 0}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;position:relative;background:var(--bg);overflow:hidden}
+.hero::before{content:"EST. 1989";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--font-display);font-size:clamp(8rem,28vw,22rem);color:#f4f2ed;letter-spacing:.04em;z-index:0;pointer-events:none;white-space:nowrap}
+.hero-content{position:relative;z-index:2;max-width:780px}
+.hero-pre{font-size:.74rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1.4rem;display:flex;align-items:center;justify-content:center;gap:1rem}
+.hero-pre::before,.hero-pre::after{content:"";display:inline-block;width:50px;height:1px;background:var(--gold)}
+.hero-title{font-family:var(--font-display);font-size:clamp(3rem,9vw,7rem);line-height:.92;letter-spacing:.04em;margin-bottom:1.4rem;color:var(--ink);text-transform:uppercase}
+.hero-title em{font-style:normal;color:var(--gold)}
+.hero-sub{font-size:1.05rem;color:var(--grey);line-height:1.85;max-width:560px;margin:0 auto 2.2rem;font-weight:400}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);padding:15px 32px;font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;transition:all .2s;border:none;cursor:pointer;font-family:var(--font-body)}
+.btn-primary:hover{background:#000;transform:translateY(-2px)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--ink);color:var(--ink);padding:13.5px 30px;font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;transition:all .2s}
+.btn-outline:hover{background:var(--ink);color:var(--bg)}
+
+/* DIVIDER */
+.divider{display:flex;align-items:center;justify-content:center;gap:1rem;padding:2.5rem 2rem;background:var(--paper);border-top:1px solid var(--grey-line);border-bottom:1px solid var(--grey-line)}
+.divider-line{flex:1;max-width:120px;height:1px;background:var(--ink)}
+.divider-text{font-family:var(--font-display);font-size:1.15rem;letter-spacing:.4em;color:var(--ink);text-transform:uppercase}
+
+/* SECTION */
+.sec{padding:6rem 2rem}
+.sec-inner{max-width:1100px;margin:0 auto}
+.sec-pre{font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.9rem}
+.sec-title{font-family:var(--font-display);font-size:clamp(2.4rem,5.5vw,4rem);line-height:.95;letter-spacing:.03em;margin-bottom:1.4rem;color:var(--ink);text-transform:uppercase}
+.sec-desc{color:var(--grey);font-size:1rem;line-height:1.9;max-width:600px}
+.sec-center{text-align:center}
+.sec-center .sec-pre{display:flex;align-items:center;justify-content:center;gap:1rem}
+.sec-center .sec-pre::before,.sec-center .sec-pre::after{content:"";display:inline-block;width:36px;height:1px;background:var(--gold)}
+.sec-center .sec-desc{margin:0 auto 3rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:4rem;align-items:center}
+.about-img{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--paper)}
+.about-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.about-img-cap{position:absolute;bottom:0;left:0;right:0;background:var(--ink);color:var(--bg);padding:1rem 1.2rem;font-family:var(--font-display);font-size:1.1rem;letter-spacing:.2em;text-align:center;text-transform:uppercase}
+.about-num{font-family:var(--font-display);font-size:4.5rem;color:var(--gold);line-height:1;letter-spacing:.04em;margin-bottom:.5rem}
+.about-num-label{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);font-weight:700;margin-bottom:1.5rem}
+.about-quote{font-family:var(--font-body);font-size:1.2rem;color:var(--ink);font-style:italic;border-left:2px solid var(--gold);padding-left:1.2rem;margin:1.5rem 0;line-height:1.5;font-weight:500}
+
+/* SERVICES */
+.services-bg{background:var(--ink);color:var(--bg)}
+.services-bg .sec-pre{color:var(--gold)}
+.services-bg .sec-title{color:var(--bg)}
+.services-bg .sec-desc{color:#a8a8a8}
+.svc-list{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:0}
+.svc-row{padding:1.8rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:background .2s}
+.svc-row:hover{background:rgba(158,122,44,.08)}
+.svc-row:nth-child(odd){border-right:1px solid rgba(255,255,255,.1)}
+.svc-row-l{flex:1}
+.svc-name{font-family:var(--font-display);font-size:1.4rem;letter-spacing:.06em;margin-bottom:.25rem;color:var(--bg);text-transform:uppercase}
+.svc-desc{font-size:.85rem;color:#a8a8a8;line-height:1.5}
+.svc-price{font-family:var(--font-display);font-size:1.3rem;color:var(--gold);letter-spacing:.04em;white-space:nowrap}
+
+/* TESTI */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:2.5rem}
+.testi-card{padding:2rem 0;border-top:2px solid var(--ink);position:relative}
+.testi-mark{font-family:var(--font-display);font-size:3rem;color:var(--gold);line-height:.8;letter-spacing:0;margin-bottom:.5rem}
+.testi-text{color:var(--ink);font-size:1.02rem;line-height:1.65;margin-bottom:1rem;font-weight:400}
+.testi-author{font-size:.7rem;color:var(--grey);font-weight:700;letter-spacing:.24em;text-transform:uppercase}
+
+/* CONTACT */
+.contact{background:var(--paper);text-align:center}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.5rem;max-width:880px;margin:2.5rem auto 0;border:2px solid var(--ink)}
+.ci{padding:2rem 1.4rem;background:var(--bg);border:1px solid var(--ink);margin:-1px}
+.ci-icon{font-family:var(--font-display);font-size:1.3rem;color:var(--gold);letter-spacing:.1em;margin-bottom:.5rem;text-transform:uppercase}
+.ci-label{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);font-weight:700;margin-bottom:.7rem}
+.ci-value{font-size:.96rem;color:var(--ink);line-height:1.55;font-weight:500}
+.ci-value a{color:var(--ink);border-bottom:2px solid var(--gold)}
+.map-wrap{margin-top:3rem;max-width:880px;margin-left:auto;margin-right:auto;height:320px;border:2px solid var(--ink)}
+.map-wrap iframe{width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.1)}
+
+/* FOOTER */
+.footer{background:var(--ink);color:var(--bg);padding:3rem 2rem;text-align:center}
+.f-brand{font-family:var(--font-display);font-size:2rem;letter-spacing:.08em;margin-bottom:.5rem;text-transform:uppercase}
+.f-brand i{font-style:normal;color:var(--gold)}
+.f-tag{color:#999;font-size:.82rem;letter-spacing:.1em;margin-bottom:1rem}
+.f-copy{font-size:.7rem;color:#666;letter-spacing:.1em}
+
+@media(max-width:860px){
+  .nav-links{display:none}
+  .cta{display:none}
+  .menu-toggle{display:block}
+  .nav-links.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#fff;padding:1.5rem 2rem;gap:1.2rem;border-bottom:1px solid var(--grey-line)}
+  .hero{padding:5rem 1.4rem 3rem;min-height:90vh}
+  .hero::before{font-size:7rem}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .svc-list{grid-template-columns:1fr}
+  .svc-row:nth-child(odd){border-right:none}
+  .sec{padding:4rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#" class="brand">Allie <i>Q's</i></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#visit">Visit</a></li>
+  </ul>
+  <a href="tel:+18157952849" class="cta">(815) 795-2849</a>
+  <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-pre fade-up">Marseilles · Established 1989</div>
+    <h1 class="hero-title fade-up d1">A Heritage Barber.<br><em>One Chair. One Standard.</em></h1>
+    <p class="hero-sub fade-up d2">Allie Q's has been the chair in Marseilles for over thirty-six years — a lifetime of cuts on Main Street and a lifetime more before that behind it. Honest work, fair prices, and a goatee trim for under ten bucks.</p>
+    <div class="hero-btns fade-up d3">
+      <a href="tel:+18157952849" class="btn-primary">Call the Shop</a>
+      <a href="#services" class="btn-outline">Services</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-text">Honest Cuts · Fair Prices</div>
+  <div class="divider-line"></div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="sec-inner about-grid">
+    <div class="about-img fade-up">
+      <!-- REPLACE WITH REAL PHOTO of owner / shop -->
+      <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80" alt="Allie Q's Barber Shop">
+      <div class="about-img-cap">Main Street, Marseilles</div>
+    </div>
+    <div>
+      <div class="sec-pre fade-up">Our Story</div>
+      <h2 class="sec-title fade-up d1">36 Years on Main Street. 60 Years in the Chair.</h2>
+      <div class="fade-up d2"><span class="about-num">36+</span><div class="about-num-label">Years in business</div></div>
+      <p class="sec-desc fade-up d3">Allie Q's has been Marseilles' Main Street barber for over three decades. The chair has been our calling for sixty years — through every fade, taper, and clean lineup, the standard hasn't moved.</p>
+      <p class="sec-desc fade-up d4" style="margin-top:1rem">We keep things simple. A good cut, a fair price, and a barbershop that feels like the kind a man remembers his father bringing him to.</p>
+      <div class="about-quote fade-up d4">"A clean cut, an honest price, and the time to get it right — that's all it's ever been."</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec services-bg" id="services">
+  <div class="sec-inner">
+    <div class="sec-center">
+      <div class="sec-pre fade-up">Services</div>
+      <h2 class="sec-title fade-up d1">The Menu</h2>
+      <p class="sec-desc fade-up d2">Walk-ins always welcome. Cash preferred — there's an ATM up the street if you need it.</p>
+    </div>
+    <div class="svc-list">
+      <div class="svc-row fade-up"><div class="svc-row-l"><div class="svc-name">Men's Haircut</div><div class="svc-desc">Classic cut, fade, or taper.</div></div><div class="svc-price">Under $20</div></div>
+      <div class="svc-row fade-up d1"><div class="svc-row-l"><div class="svc-name">Beard / Goatee Trim</div><div class="svc-desc">Shape, edge, and clean up.</div></div><div class="svc-price">Under $10</div></div>
+      <div class="svc-row fade-up d2"><div class="svc-row-l"><div class="svc-name">Hot Lather Shave</div><div class="svc-desc">Straight razor + hot towel finish.</div></div><div class="svc-price">Call</div></div>
+      <div class="svc-row fade-up d3"><div class="svc-row-l"><div class="svc-name">Kids Cut</div><div class="svc-desc">12 &amp; under.</div></div><div class="svc-price">Call</div></div>
+      <div class="svc-row fade-up d2"><div class="svc-row-l"><div class="svc-name">Senior Cut</div><div class="svc-desc">Discount for 65+.</div></div><div class="svc-price">Call</div></div>
+      <div class="svc-row fade-up d3"><div class="svc-row-l"><div class="svc-name">Cut + Beard Combo</div><div class="svc-desc">The whole works.</div></div><div class="svc-price">Call</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" id="reviews">
+  <div class="sec-inner">
+    <div class="sec-center">
+      <div class="sec-pre fade-up">Reviews</div>
+      <h2 class="sec-title fade-up d1">Word on Main Street</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fade-up"><div class="testi-mark">"</div><p class="testi-text">For less than ten bucks I got a good cut and a goatee trim. They've been our family's barber for twenty-plus years.</p><div class="testi-author">— Marseilles Family</div></div>
+      <div class="testi-card fade-up d1"><div class="testi-mark">"</div><p class="testi-text">The kind of barber shop that doesn't exist anywhere anymore. Honest work, same chair, same standard.</p><div class="testi-author">— Longtime Regular</div></div>
+      <div class="testi-card fade-up d2"><div class="testi-mark">"</div><p class="testi-text">Walked in a stranger, walked out with the best haircut I'd had in a year. I drive over an hour for it now.</p><div class="testi-author">— Out-of-Towner</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="visit">
+  <div class="sec-inner">
+    <div class="sec-pre fade-up">Visit</div>
+    <h2 class="sec-title fade-up d1">Come Find the Chair.</h2>
+    <p class="sec-desc fade-up d2" style="margin:0 auto;max-width:500px">Right on Main Street, downtown Marseilles. Look for the pole.</p>
+    <div class="contact-grid">
+      <div class="ci fade-up"><div class="ci-icon">Address</div><div class="ci-value">407 Main St<br>Marseilles, IL 61341</div></div>
+      <div class="ci fade-up d1"><div class="ci-icon">Phone</div><div class="ci-value"><a href="tel:+18157952849">(815) 795-2849</a></div></div>
+      <div class="ci fade-up d2"><div class="ci-icon">Hours</div><div class="ci-value" style="font-size:.88rem">Open mornings<br>Call to confirm</div></div>
+      <div class="ci fade-up d3"><div class="ci-icon">Payment</div><div class="ci-value" style="font-size:.88rem">Cash preferred<br>Walk-ins welcome</div></div>
+    </div>
+    <div class="map-wrap fade-up"><iframe src="https://www.google.com/maps?q=407+Main+St,+Marseilles,+IL+61341&output=embed" allowfullscreen loading="lazy"></iframe></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="f-brand">Allie <i>Q's</i></div>
+  <div class="f-tag">Marseilles' Main Street Barber · Since 1989</div>
+  <div class="f-copy">© 2026 Allie Q's Barber Shop · 407 Main St · Marseilles, IL</div>
+</footer>
+
+<script>
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var h=this.getAttribute('href');if(h==='#')return;var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('navLinks').classList.remove('open')}})});
+var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(function(el){o.observe(el)});
+</script>
+
+</body>
+</html>
