@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://allie-qs-barber-shop.vercel.app/sitemap.xml
